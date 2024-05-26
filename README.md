@@ -14,9 +14,11 @@ This full stack web development template leverages NuxtJS for server-side render
 
 ## How to run the project
 
-1. **Clone the Repository**
+1. **Initialize the template**
 
-    - Use Git to clone the project repository to your local machine.
+    ```bash
+    npx nuxi init -t github:joeseffdl/starter-template
+    ```
 
 2. **Environment Configuration**
 
