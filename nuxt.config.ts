@@ -9,7 +9,7 @@ export default defineNuxtConfig({
         "@pinia/nuxt",
         "@pinia-plugin-persistedstate/nuxt",
         "@nuxtjs/apollo",
-        "nuxt-icon"
+        "nuxt-icon",
     ],
     apollo: {
         clients: {

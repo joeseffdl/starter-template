@@ -1,29 +1,43 @@
 {
-  "name": "nuxt-app",
-  "private": true,
-  "type": "module",
-  "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "serve": "php artisan serve",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "dependencies": {
-    "@nuxtjs/tailwindcss": "^6.12.0",
-    "nuxt": "^3.11.2",
-    "nuxt-icon": "^0.6.10",
-    "vue": "^3.4.27",
-    "vue-router": "^4.3.2"
-  },
-  "devDependencies": {
-    "@nuxtjs/apollo": "^5.0.0-alpha.14",
-    "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
-    "@pinia/nuxt": "^0.5.1",
-    "@vueuse/nuxt": "^10.9.0",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.38",
-    "tailwindcss": "^3.4.3"
-  }
+    "name": "nuxt-app",
+    "private": true,
+    "type": "module",
+    "scripts": {
+        "build": "nuxt build",
+        "dev": "nuxt dev",
+        "serve": "php artisan serve",
+        "generate": "nuxt generate",
+        "preview": "nuxt preview",
+        "postinstall": "nuxt prepare",
+        "prepare": "husky"
+    },
+    "lint-staged": {
+        "**/*": "prettier --write --write --ignore-unknown --ignore-path .prettierignore"
+    },
+    "dependencies": {
+        "@nuxtjs/tailwindcss": "^6.12.0",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.1",
+        "eslint-config-prettier": "^9.1.0",
+        "husky": "^9.0.11",
+        "lint-staged": "^15.2.7",
+        "lucide-react": "^0.395.0",
+        "nuxt": "^3.11.2",
+        "nuxt-icon": "^0.6.10",
+        "prettier": "^3.3.2",
+        "prettier-plugin-tailwindcss": "^0.6.4",
+        "tailwind-merge": "^2.3.0",
+        "tailwindcss-animate": "^1.0.7",
+        "vue": "^3.4.27",
+        "vue-router": "^4.3.2"
+    },
+    "devDependencies": {
+        "@nuxtjs/apollo": "^5.0.0-alpha.14",
+        "@pinia-plugin-persistedstate/nuxt": "^1.2.0",
+        "@pinia/nuxt": "^0.5.1",
+        "@vueuse/nuxt": "^10.9.0",
+        "autoprefixer": "^10.4.19",
+        "postcss": "^8.4.38",
+        "tailwindcss": "^3.4.3"
+    }
 }
