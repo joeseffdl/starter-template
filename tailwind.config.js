@@ -1,41 +1,77 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+    darkMode: ["class"],
     content: [
-        "./components/**/*.{js,vue,ts}",
-        "./layouts/**/*.vue",
-        "./pages/**/*.vue",
-        "./plugins/**/*.{js,ts}",
-        "./app.vue",
-        "./error.vue",
+        "./pages/**/*.{ts,tsx}",
+        "./components/**/*.{ts,tsx}",
+        "./app/**/*.{ts,tsx}",
+        "./src/**/*.{ts,tsx}",
     ],
+    prefix: "",
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ["Inter", "sans-serif"],
+        container: {
+            center: true,
+            padding: "2rem",
+            screens: {
+                "2xl": "1400px",
             },
+        },
+        extend: {
             colors: {
+                border: "hsl(var(--border))",
+                input: "hsl(var(--input))",
+                ring: "hsl(var(--ring))",
+                background: "hsl(var(--background))",
+                foreground: "hsl(var(--foreground))",
                 primary: {
-                    light: "#FFD1DC", // Light pink
-                    DEFAULT: "#FFB7C5", // Default cotton candy pink
-                    dark: "#FF91A4", // Darker pink
+                    DEFAULT: "hsl(var(--primary))",
+                    foreground: "hsl(var(--primary-foreground))",
                 },
                 secondary: {
-                    light: "#B0E0E6", // Light pastel blue
-                    DEFAULT: "#ADD8E6", // Default pastel blue
-                    dark: "#87CEEB", // Darker pastel blue
+                    DEFAULT: "hsl(var(--secondary))",
+                    foreground: "hsl(var(--secondary-foreground))",
+                },
+                destructive: {
+                    DEFAULT: "hsl(var(--destructive))",
+                    foreground: "hsl(var(--destructive-foreground))",
+                },
+                muted: {
+                    DEFAULT: "hsl(var(--muted))",
+                    foreground: "hsl(var(--muted-foreground))",
                 },
                 accent: {
-                    light: "#FFDFBA", // Light pastel orange
-                    DEFAULT: "#FFCC99", // Default pastel orange
-                    dark: "#FFB266", // Darker pastel orange
+                    DEFAULT: "hsl(var(--accent))",
+                    foreground: "hsl(var(--accent-foreground))",
                 },
-                heading: "#333333", // Dark gray for headings
-                subheading: "#4F4F4F", // Slightly lighter gray for subheadings
-                body: "#666666", // Medium gray for body text
-                caption: "#999999", // Light gray for captions
+                popover: {
+                    DEFAULT: "hsl(var(--popover))",
+                    foreground: "hsl(var(--popover-foreground))",
+                },
+                card: {
+                    DEFAULT: "hsl(var(--card))",
+                    foreground: "hsl(var(--card-foreground))",
+                },
+            },
+            borderRadius: {
+                lg: "var(--radius)",
+                md: "calc(var(--radius) - 2px)",
+                sm: "calc(var(--radius) - 4px)",
+            },
+            keyframes: {
+                "accordion-down": {
+                    from: { height: "0" },
+                    to: { height: "var(--radix-accordion-content-height)" },
+                },
+                "accordion-up": {
+                    from: { height: "var(--radix-accordion-content-height)" },
+                    to: { height: "0" },
+                },
+            },
+            animation: {
+                "accordion-down": "accordion-down 0.2s ease-out",
+                "accordion-up": "accordion-up 0.2s ease-out",
             },
         },
     },
-    plugins: [],
+    plugins: [require("tailwindcss-animate")],
 };
-
