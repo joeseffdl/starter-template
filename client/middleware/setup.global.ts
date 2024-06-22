@@ -1,14 +1,19 @@
 export default defineNuxtRouteMiddleware((to) => {
     const currentRoute = to?.name?.toString().toLowerCase() ?? "";
+    const authorizedUser = false;
+
     const allowedRoutes = [
         "index",
         "auth-login",
         "auth-register",
-        "app-products",
-        "app-pricing",
-        "app-contact",
-        "dashboard",
+        "products",
+        "pricing",
+        "contact",
     ];
 
-    if (!allowedRoutes.includes(currentRoute)) return navigateTo("/");
+    !allowedRoutes.includes(currentRoute)
+        ? navigateTo("/")
+        : authorizedUser && currentRoute === "login"
+          ? navigateTo("/dashboard")
+          : null;
 });
