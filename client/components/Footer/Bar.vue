@@ -1,5 +1,5 @@
 <template>
-    <WrapperMenu>
+    <WrapperFull>
         <WrapperContained>
             <section class="w-full flex items-center justify-between">
                 <div class="text-subheading">
@@ -9,5 +9,5 @@
                 <Icon name="mdi:github" size="22" />
             </section>
         </WrapperContained>
-    </WrapperMenu>
+    </WrapperFull>
 </template>
