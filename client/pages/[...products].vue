@@ -1,6 +1,6 @@
 <template>
     {{
-        Array.isArray(currentRoute)
+        isArray(currentRoute)
             ? currentRoute.join(" ").toUpperCase()
             : currentRoute
     }}
