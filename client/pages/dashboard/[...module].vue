@@ -2,7 +2,5 @@
     <section class="">Dashboard</section>
 </template>
 <script setup lang="ts">
-definePageMeta({
-    layout: false,
-});
+definePageMeta({ layout: "dashboard" });
 </script>
