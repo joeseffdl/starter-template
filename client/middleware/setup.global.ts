@@ -1,7 +1,8 @@
 export default defineNuxtRouteMiddleware((to) => {
-    const currentRoute = to?.name?.toString().toLowerCase() ?? "";
-    const authorizedUser = false;
-    const allowedRoutes = [
+    const isAuthenticated = true;
+    const currentRoute = to.name?.toString().toLowerCase() ?? "";
+
+    const publicRoutes = [
         "index",
         "login",
         "register",
@@ -10,16 +11,15 @@ export default defineNuxtRouteMiddleware((to) => {
         "contact",
     ];
 
-    if (!authorizedUser) {
-        if (
-            !allowedRoutes.includes(currentRoute) &&
-            currentRoute !== "dashboard-module"
-        ) {
-            return navigateTo("/");
-        } else if (currentRoute === "dashboard-module") {
-            return navigateTo("/login");
-        }
-    } else if (authorizedUser && currentRoute === "login") {
+    const isPublicRoute = publicRoutes.includes(currentRoute);
+
+    if (!isAuthenticated && !isPublicRoute) {
+        return navigateTo("/login");
+    } else if (
+        isAuthenticated &&
+        (currentRoute === "login" || currentRoute === "register")
+    ) {
         return navigateTo("/dashboard");
     }
+    return;
 });

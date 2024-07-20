@@ -46,7 +46,7 @@
                 class="absolute inset-x-0 w-full h-[calc(100svh-5rem)] bg-white flex flex-col border-t md:hidden"
                 :class="{ hidden: menu }"
             >
-                <div
+                <li
                     v-for="(nav, index) in navigation"
                     :key="index"
                     class="relative flex flex-col items-center px-4 text-subheading w-full font-medium tracking-wide"
@@ -85,7 +85,7 @@
                     >
                         <span>{{ title }}</span>
                     </NuxtLink>
-                </div>
+                </li>
             </ul>
         </nav>
     </WrapperFull>
