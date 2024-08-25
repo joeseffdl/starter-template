@@ -44,3 +44,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+#GraphQL/Lighthouse
+/schema-directives.graphql
+/programmatic-types.graphql
+/_lighthouse_ide_helper.php
